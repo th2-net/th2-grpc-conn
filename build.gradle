@@ -51,8 +51,6 @@ dependencies {
     implementation 'io.grpc:grpc-core'
     implementation 'io.grpc:grpc-netty'
 
-    api "com.salesforce.servicelibs:rxgrpc-stub:${reactiveGrpcVersion}"
-
     implementation 'javax.annotation:javax.annotation-api:1.3.2'
 
     api "com.exactpro.th2:grpc-service-generator:${serviceGeneratorVersion}"
@@ -65,7 +63,7 @@ sourceSets {
         }
 
         java {
-            srcDirs 'src/gen/main/java', 'src/gen/main/grpc', 'src/gen/main/rxgrpc', 'src/gen/main/services/java/src'
+            srcDirs 'src/gen/main/java', 'src/gen/main/grpc', 'src/gen/main/services/java/src'
         }
 
         resources {
@@ -82,10 +80,6 @@ protobuf {
     plugins {
         grpc {
             artifact = "io.grpc:protoc-gen-grpc-java:${grpcVersion}"
-        }
-
-        rxgrpc {
-            artifact = "com.salesforce.servicelibs:rxgrpc:${reactiveGrpcVersion}"
         }
 
         services {
