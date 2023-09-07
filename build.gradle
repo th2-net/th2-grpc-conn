@@ -6,7 +6,7 @@ plugins {
     id 'java-library'
     id 'maven-publish'
     id 'signing'
-    id 'com.google.protobuf' version '0.9.3'
+    id 'com.google.protobuf' version '0.9.4'
     id "io.github.gradle-nexus.publish-plugin" version "1.3.0"
     id "org.owasp.dependencycheck" version "8.3.1"
     id "com.gorylenko.gradle-git-properties" version "2.4.1"
@@ -41,7 +41,7 @@ repositories {
 
     mavenLocal()
 
-    configurations.all {
+    configurations.configureEach {
         resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
         resolutionStrategy.cacheDynamicVersionsFor 0, 'seconds'
     }
@@ -49,8 +49,6 @@ repositories {
 
 dependencies {
     api platform('com.exactpro.th2:bom:4.5.0')
-
-    api 'com.exactpro.th2:grpc-common:4.3.0-dev'
 
     implementation 'io.grpc:grpc-protobuf'
     implementation 'io.grpc:grpc-core'
