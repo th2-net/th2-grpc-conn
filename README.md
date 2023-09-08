@@ -1,4 +1,4 @@
-# th2 conn gRPC library (0.0.1)
+# th2 conn gRPC library (0.1.0)
 
 This library contains proto messages and `conn` service with RPC methods which can be used in implementation of th2 conn. See [conn.proto](src/main/proto/th2_grpc_conn/conn.proto "conn.proto") file for details. <br>
 Tool generates code from `.proto` files and uploads built packages (`.proto` files and generated code) to specified repositories.
@@ -46,3 +46,11 @@ If you wish to manually create and publish package for Python:
     twine upload --repository-url ${PYPI_REPOSITORY_URL} --username ${PYPI_USER} --password ${PYPI_PASSWORD} dist/*
     ```
    `PYPI_REPOSITORY_URL`, `PYPI_USER` and `PYPI_PASSWORD` are parameters for publishing.
+
+## Release notes
+
+### 0.1.0
+
++ Updated bom:4.5.0
++ Updated grpc-service-generator:3.4.0
++ Updated mypy-protobuf:3.4
